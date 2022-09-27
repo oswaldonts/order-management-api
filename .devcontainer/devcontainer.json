@@ -31,7 +31,8 @@
 				"vscjava.vscode-java-pack",
 				"Pivotal.vscode-boot-dev-pack",
 				"redhat.vscode-xml",
-				"redhat.vscode-yaml"
+				"redhat.vscode-yaml",
+				"eamodio.gitlens"
 			]
 		}
 	}

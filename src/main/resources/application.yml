@@ -2,4 +2,4 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://fractal:UNSjznd4hw36kkHG@oswalthz-cluster.dhrwjgz.mongodb.net/order_management
+      uri: mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOSTNAME}.mongodb.net/${DB_DATABASE}

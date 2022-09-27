@@ -1,0 +1,5 @@
+     
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://fractal:UNSjznd4hw36kkHG@oswalthz-cluster.dhrwjgz.mongodb.net/order_management

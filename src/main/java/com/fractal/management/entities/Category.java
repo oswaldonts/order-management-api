@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor(staticName = "build")
+@AllArgsConstructor
 @Document(collection = "categories")
 public class Category {
     

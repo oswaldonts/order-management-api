@@ -1,5 +1,6 @@
 package com.fractal.management.controllers;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,11 +38,18 @@ public class OrderController {
 
     @PostMapping
     public Order saveOrder(@RequestBody Order order) {
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        order.setCreatedAt(now);
+        order.setUpdatedAt(now);
+
         return orderService.saveOrder(order);
     }
 
     @PutMapping(value = "{id}")
     public Order updateOrder(@PathVariable String id, @RequestBody Order order) {
+        Timestamp now = new Timestamp(System.currentTimeMillis());
+        order.setUpdatedAt(now);
+
         return orderService.updateOrder(id, order);
     }
 

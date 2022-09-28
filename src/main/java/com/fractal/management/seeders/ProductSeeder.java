@@ -31,10 +31,10 @@ public class ProductSeeder implements CommandLineRunner {
             };
 
             Double[] unitPrice = {
-                25.00,
-                25.00,
-                25.00,
-                25.00,
+                10.00,
+                20.00,
+                30.00,
+                40.00,
             };
 
             Boolean[] active = {

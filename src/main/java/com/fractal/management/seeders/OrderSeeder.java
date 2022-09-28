@@ -22,10 +22,10 @@ public class OrderSeeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
         if (orderRepository.findAll().size() == 0) {
             String[] number = {
-                "askjdlas",
-                "ajdkals",
-                "nbmnbsd",
-                "9808",
+                "a-1234",
+                "172349",
+                "F3456",
+                "087-B",
             };
 
             String[] status = {

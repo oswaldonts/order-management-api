@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.fractal.management.dto.Taxes;
@@ -21,8 +23,8 @@ public class OrderService {
     @Autowired
     private ProductRepository productRepository;
 
-    public List<Order> getOrders() {
-        return orderRepository.findAll();
+    public Page<Order> getOrders(Pageable pageable) {
+        return orderRepository.findAll(pageable);
     }
 
     public Optional<Order> getOrder(String id) {
@@ -96,9 +98,5 @@ public class OrderService {
         taxes.setFederalTax(federalTax);
 
         return taxes;
-    }
-
-    public List<Order> sortOrders() {
-        return orderRepository.sortAllByNumber();
     }
 }

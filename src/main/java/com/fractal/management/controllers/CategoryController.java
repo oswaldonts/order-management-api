@@ -1,13 +1,13 @@
 package com.fractal.management.controllers;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,8 +28,8 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping
-    public List<Category> getCategories() {
-        return categoryService.getCategories();
+    public Page<Category> getCategories(Pageable pageable) {
+        return categoryService.getCategories(pageable);
     }
 
     @GetMapping(value = "{id}")
@@ -45,10 +45,5 @@ public class CategoryController {
     @PutMapping(value = "{id}")
     public Category updateCategory(@PathVariable String id, @RequestBody Category category) {
         return categoryService.updateCategory(id, category);
-    }
-
-    @DeleteMapping(value = "{id}")
-    public void deleteCategory(@PathVariable String id) {
-        categoryService.deleteCategory(id);
     }
 }

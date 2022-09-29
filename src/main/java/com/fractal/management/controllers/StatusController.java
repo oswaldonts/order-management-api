@@ -1,11 +1,11 @@
 package com.fractal.management.controllers;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,8 +26,8 @@ public class StatusController {
     private StatusService statusService;
 
     @GetMapping
-    public List<Status> getStatuses() {
-        return statusService.getStatuses();
+    public Page<Status> getStatuses(Pageable pageable) {
+        return statusService.getStatuses(pageable);
     }
 
     @GetMapping(value = "{id}")
@@ -43,10 +43,5 @@ public class StatusController {
     @PutMapping(value = "{id}")
     public Status updateStatus(@PathVariable String id, @RequestBody Status status) {
         return statusService.updateStatus(id, status);
-    }
-
-    @DeleteMapping(value = "{id}")
-    public void deleteStatus(@PathVariable String id) {
-        statusService.deleteStatus(id);
     }
 }

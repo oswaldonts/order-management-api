@@ -2,4 +2,6 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOSTNAME}.mongodb.net/${DB_DATABASE}
+      uri: mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOSTNAME}/${DB_DATABASE}
+  config:
+    import: file:.env[.properties]

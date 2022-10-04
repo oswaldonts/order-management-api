@@ -1,12 +1,10 @@
-readme.md
-
 # Order Management System
 
 This is a project that serves some information from orders and products.
 
 To open the project use the following link [heroku-order-management-api.herokuapp.com](https://heroku-order-management-api.herokuapp.com).
 
-This app worked together with [Order Management Web](https://github.com/oswaldtzh/order-management-web).
+This app worked together with [Order Management Web](https://github.com/oswalthz/order-management-web).
 
 ## **How to Install**
 
